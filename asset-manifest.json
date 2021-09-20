@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/halolab/static/css/main.740f5ba6.chunk.css",
+    "main.js": "/halolab/static/js/main.be646025.chunk.js",
+    "main.js.map": "/halolab/static/js/main.be646025.chunk.js.map",
+    "runtime-main.js": "/halolab/static/js/runtime-main.4310cc26.js",
+    "runtime-main.js.map": "/halolab/static/js/runtime-main.4310cc26.js.map",
+    "static/js/2.b1c3af9f.chunk.js": "/halolab/static/js/2.b1c3af9f.chunk.js",
+    "static/js/2.b1c3af9f.chunk.js.map": "/halolab/static/js/2.b1c3af9f.chunk.js.map",
+    "static/js/3.982d505c.chunk.js": "/halolab/static/js/3.982d505c.chunk.js",
+    "static/js/3.982d505c.chunk.js.map": "/halolab/static/js/3.982d505c.chunk.js.map",
+    "index.html": "/halolab/index.html",
+    "static/css/main.740f5ba6.chunk.css.map": "/halolab/static/css/main.740f5ba6.chunk.css.map",
+    "static/js/2.b1c3af9f.chunk.js.LICENSE.txt": "/halolab/static/js/2.b1c3af9f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4310cc26.js",
+    "static/js/2.b1c3af9f.chunk.js",
+    "static/css/main.740f5ba6.chunk.css",
+    "static/js/main.be646025.chunk.js"
+  ]
+}
