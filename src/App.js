@@ -1,35 +1,32 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import ImageGallery from './components/ImageGallery/ImageGallery'
-import ImageGalleryItem from './components/ImageGalleryItem/ImageGalleryItem'
+import ProductsGallery from './components/ProductsGallery/ProductsGallery'
+import ProductsGalleryItem from './components/ProductsGalleryItem/ProductsGalleryItem'
 import Button from './components/Button/Button'
 import Modal from './components/Modal/Modal'
-import item from './components/test.json'
 
 
 
 
 class App extends Component {
-  state = []
-  setState(item)
-    
-  // componentDidMount() {
-    
-  //     this.fetchPhoto()
-  //   console.log(this.state)
-  // }
-
-  onChangeQuery = query => {
-    this.setState({ search: query,currentPage: 1,photos:[]})       
-        
+  state = {
+    products:[],
+    currentProducts: '',
+    isOpen: false
   }
+
+  componentDidMount() {
+    
+      this.fetchProducts()
+    
+  }
+
+  
   
   onChangeItem = item => {
-    this.setState({ currentImg: item, })
+    this.setState({ currentProducts: item, })
     this.toggelModal()
-
-    
-        
+   
   }
 
   toggelModal = () => {
@@ -37,27 +34,44 @@ class App extends Component {
   } 
   
  
-  fetchPhoto = () => {
+  fetchProducts = () => {
     
     this.setState({isLoading: true})
       axios
             .get('https://run.mocky.io/v3/b7d36eea-0b3f-414a-ba44-711b5f5e528e')
-        .then(response => { return response }).then(data=>this.setState(data.data ))
-        
-        .finally(() => this.setState({ isLoading: false }));
+        .then(response => {
+              
+          this.setState(prevState => ({
+            products: [...prevState.products,...response.data],
+            
+          }))
+        }).finally(() => this.setState({ isLoading: false }));
                 
   }
 
+  onBuyCheapest = () => {
+    const items = this.state.products
+        
+  let minPriceItem = items.reduce((a, b) => a.price < b.price ? a : b);
+     this.setState({ currentProducts: minPriceItem })
+    this.setState({isOpen: true})
+}
+
+ 
+
   render() {
     return (
-           
-      <>                           
-        <ImageGallery>
-          <ImageGalleryItem items={this.state} onClick={this.onChangeItem}/>
-        </ImageGallery>
-        {this.state.length>0 && !this.state.isLoading && (<Button onClick={this.fetchPhoto} photo={this.state}/>) }
-        {this.state.isOpen && <Modal url={this.state.currentImg} onClose={ this.toggelModal}/>} 
-       </>   
+      <>
+        
+      
+        <ProductsGallery>
+          <ProductsGalleryItem items={this.state.products} onClick={this.onChangeItem}/>
+        </ProductsGallery>
+        <Button onClick={this.onBuyCheapest} products={this.state.products}/>
+     
+        {this.state.isOpen && <Modal currentProducts={this.state.currentProducts} onClose={ this.toggelModal}/>}
+       </> 
+      
     
     
   );}

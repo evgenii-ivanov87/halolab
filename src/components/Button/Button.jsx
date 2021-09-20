@@ -16,7 +16,7 @@ class Button extends Component {
    
       return (
     <div className = { s.ButtonWrapper } >
-      <button type="button" onClick={this.handelSearch} className={s.Button}>Load more...</button>
+      <button type="button" onClick={this.handelSearch} className={s.Button}>Buy cheapest</button>
       </div>
         
     )}

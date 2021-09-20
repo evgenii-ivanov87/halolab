@@ -1,0 +1,19 @@
+.ProductsGallery {
+  display: grid;
+  max-width: calc(100vw - 48px);
+  /* flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around; */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* grid-gap: 16px; */
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  background: #e5e5e5;
+  padding-top: 104px;
+  padding-left: 152px;
+  padding-right: 152px;
+}
