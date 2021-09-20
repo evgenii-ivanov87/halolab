@@ -17,3 +17,14 @@
   padding-left: 152px;
   padding-right: 152px;
 }
+
+@media screen and (max-width: 768px) {
+  .ProductsGallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+  }
+}

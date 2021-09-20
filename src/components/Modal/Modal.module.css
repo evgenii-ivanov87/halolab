@@ -10,7 +10,11 @@
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1200;
 }
-
+@media screen and (max-width: 768px) {
+  .Modal {
+    width: 60%;
+  }
+}
 .Modal {
   display: flex;
   position: relative;
